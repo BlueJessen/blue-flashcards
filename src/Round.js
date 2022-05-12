@@ -1,5 +1,4 @@
 const Turn = require('../src/Turn');
-// problem Cards arent actually going into deck
 class Round {
   constructor(deck){
     this.deck = deck;
