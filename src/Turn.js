@@ -1,3 +1,4 @@
+const Card = require('../src/Card');
 class Turn {
   constructor(guess, card) {
     this.userGuess = guess;
@@ -20,8 +21,8 @@ class Turn {
     }
   }
 
-  giveFeedback(result) {
-    if(result) {
+  giveFeedback() {
+    if(this.evaluateGuess()) {
       return 'correct!';
     } else {
       return 'incorrect!';
