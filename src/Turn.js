@@ -14,20 +14,12 @@ class Turn {
   }
 
   evaluateGuess() {
-    if(this.userGuess === this.card.correctAnswer){
-      return true;
-    } else {
-      return false;
-    }
+  return (this.userGuess === this.card.correctAnswer) ?  true : false;
   }
 
   giveFeedback() {
-    if(this.evaluateGuess()) {
-      return 'correct!';
-    } else {
-      return 'incorrect!';
+    return (this.evaluateGuess()) ? 'correct!' : 'incorrect!';
     }
-  }
 }
 
 module.exports = Turn;

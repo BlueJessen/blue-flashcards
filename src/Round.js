@@ -1,5 +1,4 @@
 const Turn = require('../src/Turn');
-// problem Cards arent actually going into deck
 class Round {
   constructor(deck){
     this.deck = deck;
@@ -13,9 +12,9 @@ class Round {
 
   takeTurn(guess) {
     const result = new Turn(guess, this.returnCurrentCard());
-    if(!result.evaluateGuess()) {
+    if (!result.evaluateGuess()) {
       this.incorrectGuesses.push(result.card.id);
-    }
+      }
     this.turnCount++;
     this.returnCurrentCard();
     return result.giveFeedback();

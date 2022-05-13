@@ -6,12 +6,12 @@ const Turn = require('../src/Turn');
 const Deck = require('../src/Deck');
 const Round = require('../src/Round');
 
-describe('Round', function(){
-  it('should be a function', function() {
+describe('Round', () => {
+  it('should be a function', () =>  {
     expect(Round).to.be.a('function');
   })
 
-  it('should hold a deck', function(){
+  it('should hold a deck', () => {
     const card1 = new Card(1, 'What is Robbie\'s favorite animal', ['sea otter', 'pug', 'capybara'], 'sea otter');
     const card2 = new Card(14, 'What organ is Khalid missing?', ['spleen', 'appendix', 'gallbladder'], 'gallbladder');
     const card3 = new Card(12, 'What is Travis\'s middle name?', ['Lex', 'William', 'Fitzgerald'], 'Fitzgerald');
@@ -22,7 +22,7 @@ describe('Round', function(){
     expect(round.deck).to.deep.equal(deck);
   })
 
-  it('should keep track of the current card', function(){
+  it('should keep track of the current card', () => {
     const card1 = new Card(1, 'What is Robbie\'s favorite animal', ['sea otter', 'pug', 'capybara'], 'sea otter');
     const card2 = new Card(14, 'What organ is Khalid missing?', ['spleen', 'appendix', 'gallbladder'], 'gallbladder');
     const card3 = new Card(12, 'What is Travis\'s middle name?', ['Lex', 'William', 'Fitzgerald'], 'Fitzgerald');
@@ -34,7 +34,7 @@ describe('Round', function(){
     expect(round.returnCurrentCard()).to.deep.equal(deck.cards[0]);
   })
 
-  it('should have a turn counter property', function(){
+  it('should have a turn counter property', () => {
     const card1 = new Card(1, 'What is Robbie\'s favorite animal', ['sea otter', 'pug', 'capybara'], 'sea otter');
     const card2 = new Card(14, 'What organ is Khalid missing?', ['spleen', 'appendix', 'gallbladder'], 'gallbladder');
     const card3 = new Card(12, 'What is Travis\'s middle name?', ['Lex', 'William', 'Fitzgerald'], 'Fitzgerald');
@@ -45,7 +45,7 @@ describe('Round', function(){
     expect(round.turnCount).to.equal(0);
   })
 
-  it('should be able to takeTurn', function(){
+  it('should be able to takeTurn', () => {
     const card1 = new Card(1, 'What is Robbie\'s favorite animal', ['sea otter', 'pug', 'capybara'], 'sea otter');
     const card2 = new Card(14, 'What organ is Khalid missing?', ['spleen', 'appendix', 'gallbladder'], 'gallbladder');
     const card3 = new Card(12, 'What is Travis\'s middle name?', ['Lex', 'William', 'Fitzgerald'], 'Fitzgerald');
@@ -58,7 +58,7 @@ describe('Round', function(){
 
   })
 
-  it('should make a new turn instance when using takeTurn', function() {
+  it('should make a new turn instance when using takeTurn', () =>  {
     const card1 = new Card(1, 'What is Robbie\'s favorite animal', ['sea otter', 'pug', 'capybara'], 'sea otter');
     const card2 = new Card(14, 'What organ is Khalid missing?', ['spleen', 'appendix', 'gallbladder'], 'gallbladder');
     const card3 = new Card(12, 'What is Travis\'s middle name?', ['Lex', 'William', 'Fitzgerald'], 'Fitzgerald');
@@ -70,7 +70,7 @@ describe('Round', function(){
     expect(round.takeTurn('sea otter')).to.equal('correct!');
   })
 
-  it('should increment turn counter when a turn has been taken', function() {
+  it('should increment turn counter when a turn has been taken', () =>  {
     const card1 = new Card(1, 'What is Robbie\'s favorite animal', ['sea otter', 'pug', 'capybara'], 'sea otter');
     const card2 = new Card(14, 'What organ is Khalid missing?', ['spleen', 'appendix', 'gallbladder'], 'gallbladder');
     const card3 = new Card(12, 'What is Travis\'s middle name?', ['Lex', 'William', 'Fitzgerald'], 'Fitzgerald');
@@ -85,7 +85,7 @@ describe('Round', function(){
 
   })
 
-  it('should change current card when a turn has been taken', function() {
+  it('should change current card when a turn has been taken', () => {
     const card1 = new Card(1, 'What is Robbie\'s favorite animal', ['sea otter', 'pug', 'capybara'], 'sea otter');
     const card2 = new Card(14, 'What organ is Khalid missing?', ['spleen', 'appendix', 'gallbladder'], 'gallbladder');
     const card3 = new Card(12, 'What is Travis\'s middle name?', ['Lex', 'William', 'Fitzgerald'], 'Fitzgerald');
@@ -99,7 +99,7 @@ describe('Round', function(){
     expect(round.returnCurrentCard()).to.deep.equal(deck.cards[2]);
   })
 
-  it('should change current card whether the guess is incorrect or not', function() {
+  it('should change current card whether the guess is incorrect or not', () =>  {
     const card1 = new Card(1, 'What is Robbie\'s favorite animal', ['sea otter', 'pug', 'capybara'], 'sea otter');
     const card2 = new Card(14, 'What organ is Khalid missing?', ['spleen', 'appendix', 'gallbladder'], 'gallbladder');
     const card3 = new Card(12, 'What is Travis\'s middle name?', ['Lex', 'William', 'Fitzgerald'], 'Fitzgerald');
@@ -112,7 +112,7 @@ describe('Round', function(){
     expect(round.returnCurrentCard()).to.deep.equal(deck.cards[2]);
   })
 
-  it('should track incorrect guesses', function() {
+  it('should track incorrect guesses', () =>  {
     const card1 = new Card(1, 'What is Robbie\'s favorite animal', ['sea otter', 'pug', 'capybara'], 'sea otter');
     const card2 = new Card(14, 'What organ is Khalid missing?', ['spleen', 'appendix', 'gallbladder'], 'gallbladder');
     const card3 = new Card(12, 'What is Travis\'s middle name?', ['Lex', 'William', 'Fitzgerald'], 'Fitzgerald');
@@ -126,7 +126,7 @@ describe('Round', function(){
     expect(round.incorrectGuesses).to.deep.equal([1,14]);
   })
 
-  it('should have the ability to evaluate percent of correct guesses', function(){
+  it('should have the ability to evaluate percent of correct guesses', () => {
     const card1 = new Card(1, 'What is Robbie\'s favorite animal', ['sea otter', 'pug', 'capybara'], 'sea otter');
     const card2 = new Card(14, 'What organ is Khalid missing?', ['spleen', 'appendix', 'gallbladder'], 'gallbladder');
     const card3 = new Card(12, 'What is Travis\'s middle name?', ['Lex', 'William', 'Fitzgerald'], 'Fitzgerald');
