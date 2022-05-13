@@ -24,10 +24,5 @@ describe('Game', () => {
     expect(game.currentRound).to.be.an.instanceof(Round);
   })
 
-  it('start should keep track of current Round', () => {
-    const game = new Game();
-    game.start();
-    expect(game.currentRound).to.be.instanceof(Round);
-  })
 
 })
