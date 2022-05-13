@@ -3,6 +3,7 @@ class Deck {
     this.cards = cards;
     this.cardAmount = this.cards.length;
   }
+
 }
 
 module.exports = Deck;
